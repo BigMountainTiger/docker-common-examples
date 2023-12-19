@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# 8083 will send request to the Confluentinc connect
+# 8084 will send request to the Debezium connect
+PORT=8084
+URL="127.0.0.1:$PORT/connectors/"
+
+curl -i -X DELETE ${URL}exampledb-connector/
+
+SERVER="localhost:9093"
+TOPIC="postgres.public.student"
+
+kafka-topics --bootstrap-server ${SERVER} --delete --topic ${TOPIC}
+echo

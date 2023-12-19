@@ -1,0 +1,5 @@
+This is the docker image allow us to provision local aws resources
+
+https://docs.localstack.cloud/getting-started/installation/
+https://lobster1234.github.io/2017/04/05/working-with-localstack-command-line/
+

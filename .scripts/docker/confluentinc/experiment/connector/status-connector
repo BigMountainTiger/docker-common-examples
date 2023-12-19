@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# 8083 will send request to the Confluentinc connect
+# 8084 will send request to the Debezium connect
+PORT=8084
+URL="127.0.0.1:$PORT/connectors/"
+
+curl -s -X GET -H 'Content-Type: application/json' ${URL}exampledb-connector/status | jq
+
+echo
