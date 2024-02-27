@@ -1,0 +1,7 @@
+#!/bin/bash
+
+PORT=8080
+URL="http://localhost:$PORT"
+
+echo "Openning $URL" 
+google-chrome $URL

@@ -1,0 +1,4 @@
+**/localstack-aws/volume/
+**/confluentinc/plugins/
+
+**/jenkins/jenkins_home/

@@ -1,0 +1,3 @@
+https://www.codementor.io/@dmitrynarizhnykh/postgresql-change-data-capture-cdc-golang-sample-code-1v85n1hmpg
+https://dzone.com/articles/postgresql-change-data-capture
+

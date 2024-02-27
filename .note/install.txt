@@ -1,0 +1,5 @@
+https://docs.docker.com/engine/install/ubuntu/
+
+Ranchar desktop on Windows - May be useful if behind VPN:
+rdctl set --experimental.virtual-machine.networking-tunnel=true
+rdctl set --experimental.virtual-machine.networking-tunnel=false

@@ -1,0 +1,13 @@
+version: "3.8"
+
+# Oracle requires host mode to be connected
+# In host network_mode, port mapping is not needed
+# ports:
+# - 1521:1521
+
+services:
+  oracle:
+    image: container-registry.oracle.com/database/express:latest
+    network_mode: "host"
+    environment:
+      - ORACLE_PWD=docker

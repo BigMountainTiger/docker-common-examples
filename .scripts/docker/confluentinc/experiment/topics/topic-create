@@ -1,0 +1,15 @@
+#!/bin/bash
+
+BROKER="localhost:9093"
+SCHEMA_REGISTRY="http://localhost:8081"
+
+TOPIC="example-topic"
+
+echo This is not necessary as the kafka-avro-console-producer automatically creates the topic
+echo
+
+kafka-topics \
+    --bootstrap-server $BROKER \
+    --topic $TOPIC \
+    --create --partitions 1 \
+    --replication-factor 1

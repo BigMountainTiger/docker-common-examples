@@ -1,0 +1,28 @@
+#!/bin/bash
+
+SCRIPT_PATH="$(dirname -- "${BASH_SOURCE[0]}")"
+JENKINS_HOME="$SCRIPT_PATH/../jenkins_home"
+
+red() {
+    echo '\033[1;31m'$1'\033[0m'
+}
+WHAT=$1
+case "$WHAT" in
+    save|s)
+        TOKEN=$(sudo cat $JENKINS_HOME/secrets/initialAdminPassword)
+        echo $TOKEN > $JENKINS_HOME/initialAdminPassword
+        echo $TOKEN
+
+        ;;
+    clear|c)
+        TOKEN=$(cat $JENKINS_HOME/initialAdminPassword)
+        echo $TOKEN
+        
+        ;;
+    *)
+        echo -e "Only the following operations are supported:\n"
+        echo -e "admin-token [$(red s)]ave"
+        echo -e "admin-token [$(red c)lear"
+        exit 1
+        ;;
+esac

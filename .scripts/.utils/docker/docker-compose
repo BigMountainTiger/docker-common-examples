@@ -1,0 +1,33 @@
+#!/bin/bash
+
+SCRIPT_PATH=$1
+cd $SCRIPT_PATH
+pwd
+
+red() {
+    echo '\033[1;31m'$1'\033[0m'
+}
+
+WHAT=$2
+case "$WHAT" in
+    pull|p)
+        docker compose pull
+        ;;
+    up|u)
+        docker compose up -d
+        ;;
+    down|d)
+        docker compose down
+        ;;
+    restart|r)
+        docker compose restart $3
+        ;;
+    *)
+        echo -e "Only the following operations are supported:\n"
+        echo -e "docker-compose [$(red p)]ull"
+        echo -e "docker-compose [$(red u)]p"
+        echo -e "docker-compose [$(red d)]own"
+        echo -e "docker-compose [$(red r)]estart container-name"
+        exit 1
+        ;;
+esac

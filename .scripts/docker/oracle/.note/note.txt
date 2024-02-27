@@ -1,0 +1,12 @@
+https://collabnix.com/how-to-run-oracle-database-in-a-docker-container-using-docker-compose/
+
+Need an oracle account to pull the docker image
+run the command:
+.scripts/docker/oracle/.scripts/login-to-oracle-registry
+
+DBeaver connection:
+host: localhost
+port: 1521
+database: XEPDB1 as "Service Name"
+username: system
+password: see docker-compose.yml

@@ -1,0 +1,22 @@
+Jenkins docker compose example
+https://www.cloudbees.com/blog/how-to-install-and-run-jenkins-with-docker-compose
+
+Dockerhub
+https://hub.docker.com/_/jenkins
+
+TCP socket / Unix socket - /var/run/docker.sock
+https://stackoverflow.com/questions/35110146/what-is-the-purpose-of-the-file-docker-sock
+
+Docker persist sessions - mount volume (configrations will persist between docker restarts)
+./jenkins_home:/var/jenkins_home
+
+Unlock Jenkins and initialAdminPassword
+docker logs jenkins - find the unlock token
+sudo cat .scripts/docker/jenkins/jenkins_home/secrets/initialAdminPassword
+
+Jenkins Documents
+https://www.jenkins.io/
+
+SCM = Source Control Management
+https://stackoverflow.com/questions/41758231/what-does-scm-mean-in-jenkins
+

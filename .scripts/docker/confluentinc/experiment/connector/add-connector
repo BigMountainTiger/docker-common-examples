@@ -1,0 +1,13 @@
+#!/bin/bash
+
+SCRIPT_PATH="$(dirname -- "${BASH_SOURCE[0]}")"
+cd $SCRIPT_PATH
+
+# 8083 will send request to the Confluentinc connect
+# 8084 will send request to the Debezium connect
+PORT=8084
+URL="127.0.0.1:$PORT/connectors/"
+
+curl -i -X POST -H "Accept:application/json" -H "Content-Type:application/json" ${URL} --data "@config/debezium.json"
+
+echo

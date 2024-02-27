@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# With range key
+# STATUS=$(aws-local dynamodb create-table --table-name local_dynamodb_table  \
+#     --attribute-definitions AttributeName=id,AttributeType=S AttributeName=data,AttributeType=S \
+#     --key-schema AttributeName=id,KeyType=HASH AttributeName=data,KeyType=RANGE \
+#     --provisioned-throughput ReadCapacityUnits=5,WriteCapacityUnits=5)
+
+# Without range key
+STATUS=$(aws-local dynamodb create-table --table-name local_dynamodb_table  \
+    --attribute-definitions AttributeName=id,AttributeType=S \
+    --key-schema AttributeName=id,KeyType=HASH \
+    --provisioned-throughput ReadCapacityUnits=5,WriteCapacityUnits=5)
+
+
+aws-local dynamodb put-item --table-name local_dynamodb_table  --item '{"id":{"S":"1"},"data":{"S":"42"}}'
+aws-local dynamodb put-item --table-name local_dynamodb_table  --item '{"id":{"S":"2"},"data":{"S":"40"}}'
+
+aws-local dynamodb scan --table-name local_dynamodb_table
+
+aws-local dynamodb delete-table --table-name local_dynamodb_table
