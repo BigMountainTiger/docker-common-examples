@@ -1,0 +1,12 @@
+#!/bin/bash -e
+
+# This is the wrapper of the jenkins-cli.jar
+
+SCRIPT_PATH="$(dirname -- "${BASH_SOURCE[0]}")"
+JAR="$SCRIPT_PATH/download/jenkins-cli.jar"
+
+export JENKINS_URL="http://localhost:8080/"
+export JENKINS_USER_ID=admin
+export JENKINS_API_TOKEN="$($SCRIPT_PATH/jenkins-util g)"
+
+java -jar $JAR $@

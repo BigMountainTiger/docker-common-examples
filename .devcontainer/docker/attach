@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# 1. We can quickly attach the active directory to a docker container for testing purpose
+# 2. We can use the git out of the docker
+# 3. We can make changes of the file out of the docker
+# 4. The advantage is that it is lightweight and fast to start
+# 5. The user in the container is "root"
+
+# The directory to mount into the docker contaier
+WORKSPACE="/home/song/Sandbox/docker-common-examples"
+DOCKER_IMAGE="mcr.microsoft.com/devcontainers/base:ubuntu-22.04"
+
+docker run \
+    -it \
+    --rm \
+    -v $WORKSPACE:/workspace:rw \
+    "$DOCKER_IMAGE"
+
+echo -e "\nChecking if still containers running"
+docker container ls -a
