@@ -1,6 +1,7 @@
 {
     "files.exclude": {
         "**/.git": true,
-        "**/jenkins_home": true
+        "**/jenkins_home": true,
+        "**/jenkins-cli.jar": true
     }
 }

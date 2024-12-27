@@ -24,10 +24,10 @@ case "$WHAT" in
         ;;
     *)
         echo -e "Only the following operations are supported:\n"
-        echo -e "docker-compose [$(red p)]ull"
-        echo -e "docker-compose [$(red u)]p"
-        echo -e "docker-compose [$(red d)]own"
-        echo -e "docker-compose [$(red r)]estart container-name"
+        echo -e "docker-compose [$(red p)]pull"
+        echo -e "docker-compose [$(red u)]up"
+        echo -e "docker-compose [$(red d)]down"
+        echo -e "docker-compose [$(red r)]restart container-name"
         exit 1
         ;;
 esac
