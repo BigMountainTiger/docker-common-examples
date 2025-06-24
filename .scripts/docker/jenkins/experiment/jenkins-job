@@ -1,0 +1,39 @@
+#!/bin/bash -e
+
+JOB="first-job"
+
+SCRIPT_PATH="$(dirname -- "${BASH_SOURCE[0]}")"
+CONFIG_FILE=$SCRIPT_PATH/config/$JOB.xml
+CLI=$SCRIPT_PATH/../utils/jenkins-cli
+
+red() {
+    echo '\033[1;31m'$1'\033[0m'
+}
+WHAT=$1
+case "$WHAT" in
+    create|c)
+        $CLI create-job $JOB<$CONFIG_FILE
+        ;;
+    update|u)
+        $CLI update-job $JOB<$CONFIG_FILE
+        ;;
+    get|g)
+        FILE_NAME=$SCRIPT_PATH/config/$JOB-download.xml
+        $CLI get-job $JOB>$FILE_NAME
+        ;;
+    build|b)
+        $CLI build $JOB -v -s
+        ;;
+    delete-job|d)
+        $CLI delete-job $JOB
+        ;;
+    *)
+        echo -e "Only the following operations are supported:\n"
+        echo -e "admin-token [$(red c)]create"
+        echo -e "admin-token [$(red u)]update"
+        echo -e "admin-token [$(red g)]get"
+        echo -e "admin-token [$(red b)]build"
+        echo -e "admin-token [$(red d)]delete-job"
+        exit 1
+        ;;
+esac

@@ -1,6 +1,11 @@
 {
     "files.exclude": {
         "**/.git": true,
-        "**/jenkins_home": true
-    }
+        "**/jenkins_home": true,
+        "**/jenkins-cli.jar": true
+    },
+    "files.associations": {
+        "docker-compose.yml": "yaml"
+    },
+    "gitlens.mode.active": "zen"
 }
