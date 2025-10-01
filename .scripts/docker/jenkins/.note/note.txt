@@ -2,7 +2,8 @@ Jenkins docker compose example
 https://www.cloudbees.com/blog/how-to-install-and-run-jenkins-with-docker-compose
 
 Dockerhub
-https://hub.docker.com/_/jenkins
+https://hub.docker.com/_/jenkins - Deprecated
+https://hub.docker.com/r/jenkins/jenkins - Recommended
 
 TCP socket / Unix socket - /var/run/docker.sock
 https://stackoverflow.com/questions/35110146/what-is-the-purpose-of-the-file-docker-sock
@@ -17,6 +18,11 @@ sudo cat .scripts/docker/jenkins/jenkins_home/secrets/initialAdminPassword
 Jenkins Documents
 https://www.jenkins.io/
 
+Jenkins CLI
+It looks like Java 11+ is sufficient to the run the CLI
+Dowload URL after docker container starts - http://localhost:8080/manage/cli/
+
 SCM = Source Control Management
 https://stackoverflow.com/questions/41758231/what-does-scm-mean-in-jenkins
+
 

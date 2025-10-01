@@ -1,0 +1,18 @@
+Install docker from Nexus
+------------------------------
+1. Add the public APT docker repository as instructed - https://docs.docker.com/engine/install/ubuntu/
+2. Find the repository "list" file in etc/apt/sources.list.d/ for docker.list (The file may have an extension "distUpgrade". if so, remove the extension)
+3. Change the package download URL to "https://nexus.ci.{domain-name}.app/repository/{company-name}-cne-ubuntu-docker-jammy jammy stable"
+    - the ubuntu version name can be adjusted
+4. Do not need to change the signed-by keyrings
+5. Then the packages will be downloaded from nexus, not "https://download.docker.com/linux/ubuntu" anymore
+
+
+To pull docker images from Nexus
+------------------------------
+If the image name on the official docker hub is "amazon/aws-glue-libs:5",
+the nexus image name is "nexus-docker-cne.ci.{domain-name}.app/amazon/aws-glue-libs:5"
+
+The following pull the image from nexus --
+
+docker pull nexus-docker-cne.ci.{domain-name}.app/amazon/aws-glue-libs:5

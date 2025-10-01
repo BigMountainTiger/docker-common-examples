@@ -1,0 +1,5 @@
+1. docker volumes are stored in /var/lib/docker/volumes
+2. Annoymous volumes can accumulate to take large amount of disk space
+3. Annoymous volumes are not deleted when "docker compose down"
+    - "--volumes" option is needed to let "docker compose down" also clear the Annoymous volumes
+4. "docker volume prune" prunes the Annoymous volumes

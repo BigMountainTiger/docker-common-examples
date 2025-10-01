@@ -2,7 +2,8 @@ version: "3.8"
 
 services:
   jenkins:
-    image: jenkins:2.60.3
+    # Can choose the jdk version on the image
+    image: jenkins/jenkins:lts-jdk11
     container_name: jenkins
     privileged: true
     user: root

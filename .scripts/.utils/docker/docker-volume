@@ -1,0 +1,26 @@
+#!/bin/bash
+
+red() {
+    echo '\033[1;31m'$1'\033[0m'
+}
+
+WHAT=$1
+case "$WHAT" in
+list | l)
+    docker volume ls
+    ;;
+prune | p)
+    docker volume prune
+    # docker system prune --volumes
+    ;;
+check-space | ck)
+    sudo du -h --max-depth 1 /var/lib/docker
+    ;;
+*)
+    echo -e "Only the following operations are supported:\n"
+    echo -e "docker-volume $(red l) | list - list the volumes"
+    echo -e "docker-volume $(red p) | prune - prune the anonymous volumes, remove anonymous volumes"
+    echo -e "docker-volume $(red ck) | check-space - check the disk space used by the volumes, need sudo for the /var/lib/docker directory"
+    exit 1
+    ;;
+esac

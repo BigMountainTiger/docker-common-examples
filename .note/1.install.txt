@@ -1,4 +1,7 @@
+Linux install and postinstall
 https://docs.docker.com/engine/install/ubuntu/
+https://docs.docker.com/engine/install/linux-postinstall/
+
 
 Ranchar desktop on Windows - May be useful if behind VPN:
 rdctl set --experimental.virtual-machine.networking-tunnel=true

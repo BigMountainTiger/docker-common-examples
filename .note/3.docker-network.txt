@@ -1,0 +1,22 @@
+docker network ls
+docker run has --network option, default is bridge
+
+Docker defaut networks
+1. bridge => Default, an isolated network for the containers
+    - need -p 80:90 to export the port to the host, so the port is accessible from the host
+    - DNS available within the isolated network
+    - By default, docker-compose automatically create a bridge network. To stop it, add "network_mode: bridge/host" to all the services (containers)
+        - https://stackoverflow.com/questions/43754095/how-to-join-the-default-bridge-network-with-docker-compose-v2
+2. host => directly get a port from the host
+3. none => If no network is needed for the container
+
+The above 3 are the most commonly used network modes
+
+Advanced topics:
+https://docs.docker.com/engine/network/
+1. bridge => The default network driver.
+2. host => Remove network isolation between the container and the Docker host.
+3. none =>	Completely isolate a container from the host and other containers.
+4. overlay => Overlay networks connect multiple Docker daemons together.
+5. ipvlan => IPvlan networks provide full control over both IPv4 and IPv6 addressing.
+6. macvlan => Assign a MAC address to a container.

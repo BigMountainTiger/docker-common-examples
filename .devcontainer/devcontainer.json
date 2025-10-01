@@ -1,0 +1,36 @@
+// 1. It is actually opens very fast runing in a Linux machine, once the image is pulled and container created
+// 2. My experience if the host computer is in windows, it is pretty slow
+// 3. Git credentials are passed into the contaier
+// 4. It is more convinent to use an existing container by Microsoft - https://hub.docker.com/_/microsoft-devcontainers
+// 5. Need to enable bash_completion - https://faun.pub/configure-bash-auto-completion-tab-completion-on-linux-db0d9310818b
+// 
+// 
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
+{
+	"name": "Ubuntu",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	// Dockerhub - https://hub.docker.com/_/microsoft-devcontainers
+	"image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "uname -a",
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+				"ms-python.autopep8"
+			],
+			"settings": {
+				"terminal.integrated.fontSize": 16,
+				"terminal.integrated.fontFamily": "Ubuntu mono"
+			}
+		}
+	}
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}
