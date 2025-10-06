@@ -1,0 +1,16 @@
+1. docker volumes are stored in /var/lib/docker/volumes
+    Annoymous volumes can accumulate to take large amount of disk space
+
+2. commands:
+    docker volume
+    docker volume ls
+    docker volume prune - prunes the Annoymous volumes
+
+3. docker run
+    With "docker run --rm" option, docker automatically removes the container and its associated anonymous volumes when it exits
+
+4. docker compose
+    Annoymous volumes are not deleted when "docker compose down" by default
+        "--volumes" option is needed to let "docker compose down" also clear the Annoymous volumes
+
+5. We can always "docker volume prune" to clean the annoymous volumes
