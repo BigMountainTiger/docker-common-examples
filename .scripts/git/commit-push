@@ -1,0 +1,13 @@
+#!/bin/bash
+
+git reset --soft HEAD~
+git add-commit -m "Updated the docker-common-examples"
+git push -f
+
+echo
+echo -e "Wait for a second ...\n" && sleep 1
+
+echo "Changes in the last commit:"
+git diff HEAD~1 HEAD --name-only && echo
+
+git log -2

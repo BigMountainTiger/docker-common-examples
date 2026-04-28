@@ -1,0 +1,6 @@
+Definition: The --platform option specify the os/arch of the docker image
+Default: The default platform is the same as the host machine
+
+Example:
+  - docker run --platform linux/amd64 myimage:latest
+  - docker build --platform linux/amd64 -t myimage:latest .
