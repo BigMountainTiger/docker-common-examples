@@ -7,5 +7,11 @@
     "files.associations": {
         "docker-compose.yml": "yaml"
     },
+    "yaml.format.printWidth": 120,
+    "[yaml]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.detectIndentation": false
+    },
     "gitlens.mode.active": "zen"
 }

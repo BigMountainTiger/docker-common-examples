@@ -1,6 +1,19 @@
 Definition: The --platform option specify the os/arch of the docker image
 Default: The default platform is the same as the host machine
+Purpose: To allow users to pull or run images built for different architectures than their host machine
 
 Example:
+  - docker pull --platform linux/amd64 myimage:latest
   - docker run --platform linux/amd64 myimage:latest
   - docker build --platform linux/amd64 -t myimage:latest .
+
+In dockerfile:
+  FROM --platform=linux/amd64 mybaseimage:latest
+
+Options:
+  - linux/amd64: For x86_64 architecture
+  - linux/arm64: For ARM64 architecture
+  - linux/arm/v7: For ARMv7 architecture
+  - linux/arm/v6: For ARMv6 architecture
+  - linux/ppc64le: For PowerPC architecture
+  - linux/s390x: For IBM Z architecture
