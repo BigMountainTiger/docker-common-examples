@@ -1,4 +1,13 @@
 {
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.profiles.linux": {
+        "bash": {
+            "path": "bash",
+            "env": {
+                "PROJECT_BASE": "${workspaceFolder}"
+            }
+        }
+    },
     "files.exclude": {
         "**/.git": true,
         "**/jenkins_home": true,
@@ -12,6 +21,5 @@
         "editor.insertSpaces": true,
         "editor.tabSize": 2,
         "editor.detectIndentation": false
-    },
-    "gitlens.mode.active": "zen"
+    }
 }
